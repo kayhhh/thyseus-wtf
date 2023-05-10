@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "nodenext",
+    "experimentalDecorators": true,
+    "outDir": "build"
+  },
+  "include": ["src"]
+}
