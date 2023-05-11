@@ -14,8 +14,14 @@ class ComponentA {
   @struct.f32 declare x: number;
 }
 
+/**
+ * System that despawns and spawns in entities.
+ */
 function systemA(commands: Commands, entities: Query<[Entity, ComponentA]>) {
   let newX = 0;
+
+  //! After a few iterations, the length of the query will be 0 - why?
+  console.log(entities.length);
 
   for (const [entity, { x }] of entities) {
     newX = x + 1;
@@ -24,7 +30,6 @@ function systemA(commands: Commands, entities: Query<[Entity, ComponentA]>) {
 
   const compA = new ComponentA();
   compA.x = newX;
-
   commands.spawn().add(compA);
 }
 
@@ -33,6 +38,7 @@ systemA.parameters = [
   QueryDescriptor([Entity, ComponentA]),
 ];
 
+// Create world
 const world = await World.new().addSystems(systemA).build();
 
 world.runSchedule(CoreSchedule.Startup);
