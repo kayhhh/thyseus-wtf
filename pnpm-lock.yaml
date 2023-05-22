@@ -2,10 +2,13 @@ lockfileVersion: '6.0'
 
 dependencies:
   thyseus:
-    specifier: 0.12.0-beta.3
-    version: 0.12.0-beta.3
+    specifier: 0.12.0-beta.5
+    version: 0.12.0-beta.5
 
 devDependencies:
+  '@thyseus/transformer-rollup':
+    specifier: 0.12.0-beta.5
+    version: 0.12.0-beta.5(thyseus@0.12.0-beta.5)
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
@@ -213,6 +216,42 @@ packages:
     dev: true
     optional: true
 
+  /@rollup/pluginutils@5.0.2:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@thyseus/transformer-rollup@0.12.0-beta.5(thyseus@0.12.0-beta.5):
+    resolution: {integrity: sha512-FL270kkChS6BnlX7t/8JQhLJZfD3Ja47qvUosBHD2AqrEkv63tWRCovnQAq+mZb543K/eCJmivePpmCkASnnMQ==}
+    peerDependencies:
+      thyseus: 0.12.0-beta.5
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      '@thyseus/typescript-transformer': 0.12.0-beta.5
+      thyseus: 0.12.0-beta.5
+    transitivePeerDependencies:
+      - rollup
+    dev: true
+
+  /@thyseus/typescript-transformer@0.12.0-beta.5:
+    resolution: {integrity: sha512-+iLxU5BAHRrvj0mzAJNCuntmszvqrF4a6KvWRNXnJZp6iRWaCqb59+cq0QGOfL8IoitFnleM6RPfVldatUbU/Q==}
+    dependencies:
+      typescript: 5.0.4
+    dev: true
+
+  /@types/estree@1.0.1:
+    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: true
+
   /esbuild@0.17.18:
     resolution: {integrity: sha512-z1lix43jBs6UKjcZVKOw2xx69ffE2aG0PygLL5qJ9OS/gy0Ewd1gW/PUQIOIQGXBHWNywSc0floSKoMFF8aK2w==}
     engines: {node: '>=12'}
@@ -245,7 +284,10 @@ packages:
 
   /esm-env@1.0.0:
     resolution: {integrity: sha512-Cf6VksWPsTuW01vU9Mk/3vRue91Zevka5SjyNf3nEpokFRuqt/KjUQoGAwq9qMmhpLTHmXzSIrFRw8zxWzmFBA==}
-    dev: false
+
+  /estree-walker@2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
+    dev: true
 
   /fsevents@2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
@@ -263,6 +305,11 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
+
+  /picomatch@2.3.1:
+    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
+    engines: {node: '>=8.6'}
     dev: true
 
   /postcss@8.4.23:
@@ -287,11 +334,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /thyseus@0.12.0-beta.3:
-    resolution: {integrity: sha512-73OzeLzDaJaWelhnKK4bScHxcFT3206R+WYUvk6W7PQKx3c5ipj9S8Ya41/BC0YI5Qb+Y3avx1o/0WOyIkHDgQ==}
+  /thyseus@0.12.0-beta.5:
+    resolution: {integrity: sha512-It7mCJBZAz//vmdx57gDr0sMzl1McyOZ5Vr7GClIjXXqCmw+hMSKmN8sDRTNT+aPLQom0nkj2XRRFnlGFhXpag==}
     dependencies:
       esm-env: 1.0.0
-    dev: false
 
   /typescript@5.0.4:
     resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}

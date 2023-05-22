@@ -19,7 +19,6 @@ function systemA(commands: Commands, entities: Query<Entity>) {
 
   commands.spawn();
 }
-systemA.parameters = [CommandsDescriptor(), QueryDescriptor(Entity)];
 
 const world = await World.new().addSystems(systemA).build();
 world.runSchedule(CoreSchedule.Startup);
@@ -28,4 +27,5 @@ const loop = async () => {
   world.runSchedule(CoreSchedule.Main);
   requestAnimationFrame(loop);
 };
+
 requestAnimationFrame(loop);
