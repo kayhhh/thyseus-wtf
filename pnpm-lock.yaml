@@ -2,13 +2,13 @@ lockfileVersion: '6.0'
 
 dependencies:
   thyseus:
-    specifier: 0.12.0-beta.5
-    version: 0.12.0-beta.5
+    specifier: 0.12.0-beta.6
+    version: 0.12.0-beta.6
 
 devDependencies:
   '@thyseus/transformer-rollup':
     specifier: 0.12.0-beta.5
-    version: 0.12.0-beta.5(thyseus@0.12.0-beta.5)
+    version: 0.12.0-beta.5(thyseus@0.12.0-beta.6)
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
@@ -230,14 +230,14 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@thyseus/transformer-rollup@0.12.0-beta.5(thyseus@0.12.0-beta.5):
+  /@thyseus/transformer-rollup@0.12.0-beta.5(thyseus@0.12.0-beta.6):
     resolution: {integrity: sha512-FL270kkChS6BnlX7t/8JQhLJZfD3Ja47qvUosBHD2AqrEkv63tWRCovnQAq+mZb543K/eCJmivePpmCkASnnMQ==}
     peerDependencies:
       thyseus: 0.12.0-beta.5
     dependencies:
       '@rollup/pluginutils': 5.0.2
       '@thyseus/typescript-transformer': 0.12.0-beta.5
-      thyseus: 0.12.0-beta.5
+      thyseus: 0.12.0-beta.6
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -334,8 +334,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /thyseus@0.12.0-beta.5:
-    resolution: {integrity: sha512-It7mCJBZAz//vmdx57gDr0sMzl1McyOZ5Vr7GClIjXXqCmw+hMSKmN8sDRTNT+aPLQom0nkj2XRRFnlGFhXpag==}
+  /thyseus@0.12.0-beta.6:
+    resolution: {integrity: sha512-QLwUZU/29en1wczH/tYCJFTMvMxzpWFQimcFWAgjquatwxMIiRffdigJ1T6/kmMxHFNhB63aHYwU2UpJhYkZ6g==}
     dependencies:
       esm-env: 1.0.0
 
