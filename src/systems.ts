@@ -17,9 +17,9 @@ export function systemA(commands: Commands, entities: Query<Entity>) {
     commands.spawn();
   }
 
-  console.log("🦹", "entity count", ids.length);
-  // ! Grows over time, fibonacci sequence
+  // ! Entity count grows over time, fibonacci sequence
   // 2, 3, 5, 8, 13, 21, 34, 55, 89
+  console.log("🦹", "entity count", ids.length);
 
   // Stop the tab from crashing
   if (ids.length > 20) throw new Error("Too many entities");
