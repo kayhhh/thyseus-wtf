@@ -1,24 +1,22 @@
-import { Commands, Entity, Or, Query, Without, struct } from "thyseus";
-
-@struct
-class ComponentA {
-  @struct.f32 declare a: number;
-}
-
-@struct
-class ComponentB {
-  @struct.f32 declare b: number;
-}
+import { Commands, Entity, Query } from "thyseus";
 
 export function startupSystem(commands: Commands) {
   commands.spawn();
+  commands.spawn();
 }
 
-export function systemA(
-  entities: Query<Entity, Or<Without<ComponentA>, Without<ComponentB>>>
-) {
+export function systemA(commands: Commands, entities: Query<Entity>) {
+  const ids: bigint[] = [];
+
   for (const entity of entities) {
-    //! RangeError: Out of bounds index access in Vec.prototype.get()!
-    entity.addType(ComponentA);
+    ids.push(entity.id);
+
+    entity.despawn();
+
+    commands.spawn();
   }
+
+  console.log(ids.length);
+  // ! Grows over time
+  // 2, 3, 5, 8, 13, 21, 34, 55, 89
 }
