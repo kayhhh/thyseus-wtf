@@ -1,26 +1,35 @@
-import { Commands, Entity, Query } from "thyseus";
+import { Commands, Entity, Query, With, initStruct, struct } from "thyseus";
+
+@struct
+class ComponentA {
+  @struct.array({ type: "f32", length: 2 }) declare value: Float32Array;
+
+  constructor() {
+    initStruct(this);
+
+    this.value.set([1, 2]);
+
+    console.log("❤️ ComponentA constructor called");
+  }
+}
+
+@struct
+class ComponentB {
+  @struct.substruct(ComponentA) declare compA: ComponentA;
+}
 
 export function startupSystem(commands: Commands) {
-  commands.spawn();
-  commands.spawn();
+  const compB = new ComponentB();
+
+  console.log("Setting compA value to [3, 4]");
+  compB.compA.value.set([3, 4]);
+  console.log("Reading compA value [0]", compB.compA.value[0]); // 1
+
+  commands.spawn().add(compB);
 }
 
-export function systemA(commands: Commands, entities: Query<Entity>) {
-  const ids: bigint[] = [];
-
-  for (const entity of entities) {
-    ids.push(entity.id);
-
-    console.log("😓", "despawning", entity.id);
-    entity.despawn();
-
-    commands.spawn();
-  }
-
-  // ! Entity count grows over time, fibonacci sequence
-  // 2, 3, 5, 8, 13, 21, 34, 55, 89
-  console.log("🦹", "entity count", ids.length);
-
-  // Stop the tab from crashing
-  if (ids.length > 20) throw new Error("Too many entities");
-}
+export function systemA(
+  commands: Commands,
+  compAs: Query<Entity, With<ComponentA>>,
+  compBs: Query<Entity, With<ComponentB>>
+) {}
