@@ -1,7 +1,7 @@
-import { CoreSchedule, World } from "thyseus";
+import { StartSchedule, World } from "thyseus";
 import { startupSystem, systemA } from "./systems.js";
 
 export const world = await World.new()
-  .addSystemsToSchedule(CoreSchedule.Startup, startupSystem)
+  .addSystemsToSchedule(StartSchedule, startupSystem)
   .addSystems(systemA)
   .build();
