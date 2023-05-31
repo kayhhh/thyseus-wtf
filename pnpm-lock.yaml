@@ -2,13 +2,13 @@ lockfileVersion: '6.0'
 
 dependencies:
   thyseus:
-    specifier: 0.12.0-beta.6
-    version: 0.12.0-beta.6
+    specifier: 0.12.0-beta.7
+    version: 0.12.0-beta.7
 
 devDependencies:
   '@thyseus/transformer-rollup':
-    specifier: 0.12.0-beta.5
-    version: 0.12.0-beta.5(thyseus@0.12.0-beta.6)
+    specifier: 0.12.0-beta.7
+    version: 0.12.0-beta.7(thyseus@0.12.0-beta.7)
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
@@ -230,20 +230,20 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@thyseus/transformer-rollup@0.12.0-beta.5(thyseus@0.12.0-beta.6):
-    resolution: {integrity: sha512-FL270kkChS6BnlX7t/8JQhLJZfD3Ja47qvUosBHD2AqrEkv63tWRCovnQAq+mZb543K/eCJmivePpmCkASnnMQ==}
+  /@thyseus/transformer-rollup@0.12.0-beta.7(thyseus@0.12.0-beta.7):
+    resolution: {integrity: sha512-VFZd0csQB6RnSB93cw1JWl554Ysml+GE9QMPkCZNcqpXkvIUyX+sNZUVY5mtIJc8Yek15uxOjxzSx1CvTF5UOg==}
     peerDependencies:
-      thyseus: 0.12.0-beta.5
+      thyseus: 0.12.0-beta.7
     dependencies:
       '@rollup/pluginutils': 5.0.2
-      '@thyseus/typescript-transformer': 0.12.0-beta.5
-      thyseus: 0.12.0-beta.6
+      '@thyseus/typescript-transformer': 0.12.0-beta.7
+      thyseus: 0.12.0-beta.7
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /@thyseus/typescript-transformer@0.12.0-beta.5:
-    resolution: {integrity: sha512-+iLxU5BAHRrvj0mzAJNCuntmszvqrF4a6KvWRNXnJZp6iRWaCqb59+cq0QGOfL8IoitFnleM6RPfVldatUbU/Q==}
+  /@thyseus/typescript-transformer@0.12.0-beta.7:
+    resolution: {integrity: sha512-IY/NXcNqiVXNWFLl5X7Pq68zFrk1i9wTOKYeEiJbXKkPlJzEnz56WalDo2bkzD5YJZMMSw+QPKKLiWkQjKqZmg==}
     dependencies:
       typescript: 5.0.4
     dev: true
@@ -334,8 +334,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /thyseus@0.12.0-beta.6:
-    resolution: {integrity: sha512-QLwUZU/29en1wczH/tYCJFTMvMxzpWFQimcFWAgjquatwxMIiRffdigJ1T6/kmMxHFNhB63aHYwU2UpJhYkZ6g==}
+  /thyseus@0.12.0-beta.7:
+    resolution: {integrity: sha512-OcZv5hZ6YJPUfzzTG5ItXelBTdElAhsgNdU9c2pDnZ5agwIFCrexPqVC0vvBlg5CUQi7yXc/bOhiO2eKZogbFA==}
     dependencies:
       esm-env: 1.0.0
 
