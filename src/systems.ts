@@ -1,35 +1,17 @@
-import { Commands, Entity, Query, With, initStruct, struct } from "thyseus";
+import { Commands, Mut, Query, struct } from "thyseus";
 
 @struct
 class ComponentA {
-  @struct.array({ type: "f32", length: 2 }) declare value: Float32Array;
-
-  constructor() {
-    initStruct(this);
-
-    this.value.set([1, 2]);
-
-    console.log("❤️ ComponentA constructor called");
-  }
-}
-
-@struct
-class ComponentB {
-  @struct.substruct(ComponentA) declare compA: ComponentA;
+  @struct.string declare value: string;
 }
 
 export function startupSystem(commands: Commands) {
-  const compB = new ComponentB();
-
-  console.log("Setting compA value to [3, 4]");
-  compB.compA.value.set([3, 4]);
-  console.log("Reading compA value [0]", compB.compA.value[0]); // 1
-
-  commands.spawn().add(compB);
+  commands.spawn().addType(ComponentA);
 }
 
-export function systemA(
-  commands: Commands,
-  compAs: Query<Entity, With<ComponentA>>,
-  compBs: Query<Entity, With<ComponentB>>
-) {}
+export function systemA(compAs: Query<Mut<ComponentA>>) {
+  for (const compA of compAs) {
+    compA.value = "Hello World!";
+    console.log(compA.value);
+  }
+}
