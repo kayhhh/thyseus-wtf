@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@thyseus/transformer-rollup": "0.12.0-beta.7",
+    "@thyseus/transformer-rollup": "^0.12.0",
     "typescript": "^5.0.4",
     "vite": "^4.3.5"
   },
   "dependencies": {
-    "thyseus": "0.12.0-beta.7"
+    "thyseus": "^0.12.1"
   }
 }
