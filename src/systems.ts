@@ -12,6 +12,7 @@ export function startupSystem(commands: Commands) {
 export function systemA(compAs: Query<Mut<ComponentA>>) {
   for (const compA of compAs) {
     compA.value += 1;
+    // Sometimes stops at 1, somtimes at 22, etc
     console.log(compA.value);
   }
 }
