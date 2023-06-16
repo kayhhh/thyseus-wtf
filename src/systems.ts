@@ -2,7 +2,7 @@ import { Commands, Mut, Query, struct } from "thyseus";
 
 @struct
 class ComponentA {
-  @struct.string declare value: string;
+  @struct.i16 declare value: number;
 }
 
 export function startupSystem(commands: Commands) {
@@ -11,7 +11,7 @@ export function startupSystem(commands: Commands) {
 
 export function systemA(compAs: Query<Mut<ComponentA>>) {
   for (const compA of compAs) {
-    compA.value = "Hello World!";
+    compA.value += 1;
     console.log(compA.value);
   }
 }
