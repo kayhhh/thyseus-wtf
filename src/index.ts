@@ -1,9 +1,9 @@
-import { DefaultSchedule } from "thyseus";
+import { DefaultSchedule, StartSchedule } from "thyseus";
 import { world } from "./world.js";
 
-const loop = async () => {
-  console.log("--------- start loop ----------");
+await world.runSchedule(StartSchedule);
 
+const loop = async () => {
   await world.runSchedule(DefaultSchedule);
   requestAnimationFrame(loop);
 };

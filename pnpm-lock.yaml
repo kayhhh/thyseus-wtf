@@ -1,21 +1,17 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   thyseus:
-    specifier: ^0.13.1
-    version: 0.13.1
+    specifier: ^0.14.0-beta.5
+    version: 0.14.0-beta.5
 
 devDependencies:
   '@thyseus/transformer-rollup':
-    specifier: ^0.13.0
-    version: 0.13.0(thyseus@0.13.1)
+    specifier: ^0.14.0-beta.3
+    version: 0.14.0-beta.3(thyseus@0.14.0-beta.5)(vite@4.3.5)
   typescript:
-    specifier: ^5.0.4
-    version: 5.0.4
+    specifier: ^5.1.6
+    version: 5.1.6
   vite:
     specifier: ^4.3.5
     version: 4.3.5
@@ -234,26 +230,45 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@thyseus/transformer-rollup@0.13.0(thyseus@0.13.1):
-    resolution: {integrity: sha512-uEKoGsHjjO38/Jr1IRT/lY/khnyNHhKn8Q3VfLKDUG6QFRg05mm07vy7Af6OFMvGuwnT7e2u9U7Pl3d4VnoTNA==}
+  /@thyseus/transformer-rollup@0.14.0-beta.3(thyseus@0.14.0-beta.5)(vite@4.3.5):
+    resolution: {integrity: sha512-gdayyfZLjR5fVv8vpES2VXXI041pfMX9/VPwtoFu5/CYnxW6iW/WoxVZRIEu1YcAaf+UOBFKWVufrMMoTAMDqA==}
     peerDependencies:
-      thyseus: ~0.13
+      thyseus: ~0.14-beta.0
     dependencies:
       '@rollup/pluginutils': 5.0.2
-      '@thyseus/typescript-transformer': 0.12.0-beta.7
-      thyseus: 0.13.1
+      '@thyseus/typescript-transformer': 0.14.0-beta.3(vite@4.3.5)
+      thyseus: 0.14.0-beta.5
+      typescript: 5.1.6
     transitivePeerDependencies:
       - rollup
+      - supports-color
+      - vite
     dev: true
 
-  /@thyseus/typescript-transformer@0.12.0-beta.7:
-    resolution: {integrity: sha512-IY/NXcNqiVXNWFLl5X7Pq68zFrk1i9wTOKYeEiJbXKkPlJzEnz56WalDo2bkzD5YJZMMSw+QPKKLiWkQjKqZmg==}
+  /@thyseus/typescript-transformer@0.14.0-beta.3(vite@4.3.5):
+    resolution: {integrity: sha512-WTr/TplpMMiLvSIOZXs/25t3fsgOG53silzQjp5DhX0PU5GIVMFtQt8t8zvtvri1c1kJbPEbPR0HQNkBimABmg==}
     dependencies:
-      typescript: 5.0.4
+      typescript: 5.1.6
+      vite-tsconfig-paths: 4.2.0(typescript@5.1.6)(vite@4.3.5)
+    transitivePeerDependencies:
+      - supports-color
+      - vite
     dev: true
 
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: true
+
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
     dev: true
 
   /esbuild@0.17.18:
@@ -301,6 +316,14 @@ packages:
     dev: true
     optional: true
 
+  /globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+    dev: true
+
+  /ms@2.1.2:
+    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: true
+
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -338,15 +361,45 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /thyseus@0.13.1:
-    resolution: {integrity: sha512-bORnObHR3bcjvR3KEv4BaMUt59355cSew/owRht5NlyEK/mrQ5/+HGeYI9+OdV9u/IOk9UeY72nHzjd0EIydxg==}
+  /thyseus@0.14.0-beta.5:
+    resolution: {integrity: sha512-uEz9+ZG271BxPFIhBlRjP7FuELbXKvithnsuofNITME/G0toN1QB7OgOQwE8Ioe4Inhn2dBTW7lXeifP+cNXKg==}
     dependencies:
       esm-env: 1.0.0
 
-  /typescript@5.0.4:
-    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
-    engines: {node: '>=12.20'}
+  /tsconfck@2.1.2(typescript@5.1.6):
+    resolution: {integrity: sha512-ghqN1b0puy3MhhviwO2kGF8SeMDNhEbnKxjK7h6+fvY9JAxqvXi8y5NAHSQv687OVboS2uZIByzGd45/YxrRHg==}
+    engines: {node: ^14.13.1 || ^16 || >=18}
     hasBin: true
+    peerDependencies:
+      typescript: ^4.3.5 || ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.1.6
+    dev: true
+
+  /typescript@5.1.6:
+    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
+  /vite-tsconfig-paths@4.2.0(typescript@5.1.6)(vite@4.3.5):
+    resolution: {integrity: sha512-jGpus0eUy5qbbMVGiTxCL1iB9ZGN6Bd37VGLJU39kTDD6ZfULTTb1bcc5IeTWqWJKiWV5YihCaibeASPiGi8kw==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      tsconfck: 2.1.2(typescript@5.1.6)
+      vite: 4.3.5
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /vite@4.3.5:
@@ -380,3 +433,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

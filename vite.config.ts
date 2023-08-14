@@ -1,4 +1,4 @@
-import { thyseusPlugin } from "@thyseus/transformer-rollup";
+import { thyseus } from "@thyseus/transformer-rollup";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -7,7 +7,7 @@ export default defineConfig({
     minify: false,
   },
   plugins: [
-    thyseusPlugin(),
+    thyseus(),
     // Cross Origin Isolation required for multi-threading
     {
       configureServer: (server) => {

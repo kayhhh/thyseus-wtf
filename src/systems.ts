@@ -1,24 +1,20 @@
-import { EventReader, EventWriter, struct } from "thyseus";
+import { Commands, Mut, Query, struct, u8 } from "thyseus";
 
 @struct
 class ComponentA {
-  @struct.i16 declare value: number;
+  array: u8[] = [];
 }
 
-export function writeEvents(writer: EventWriter<ComponentA>) {
-  console.log("writer");
-
-  const event = writer.create();
-  event.value = 2;
-  writer.clear();
+export function initSystem(commands: Commands) {
+  commands.spawn(true).add(new ComponentA());
 }
 
-export function readEvents(reader: EventReader<ComponentA>) {
-  console.log("reader", reader.length);
+const bigArray = new Array(10000000).fill(0);
+
+export function systemA(entities: Query<Mut<ComponentA>>) {
+  for (const entity of entities) {
+    console.log(entity.array.length);
+    entity.array = bigArray;
+  }
 }
 
-export function clearEvents(writer: EventWriter<ComponentA>) {
-  console.log("clear");
-
-  writer.clearImmediate();
-}

@@ -1,9 +1,9 @@
-import { World, applyCommands, run } from "thyseus";
-import { clearEvents, readEvents, writeEvents } from "./systems.js";
+import { StartSchedule, World, applyCommands, run } from "thyseus";
+import { initSystem, systemA } from "./systems.js";
 
 export const world = await World.new()
   .addSystems(
-    ...run.chain(writeEvents, readEvents, applyCommands),
-    run(clearEvents).before(readEvents)
+    ...run.chain(systemA, applyCommands),
   )
+  .addSystemsToSchedule(StartSchedule, initSystem)
   .build();
